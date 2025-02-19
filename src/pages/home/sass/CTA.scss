@@ -1,0 +1,86 @@
+.CTA {
+  background-color: $_Primary;
+  background-image: url(./assets/background/bg-snow.png),
+    url(./assets/background/bg-forest.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 120px 0;
+}
+
+.CTA-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  width: 426px;
+  margin: auto;
+  .CTA-title {
+    margin-bottom: 20px;
+    @include header_2;
+    color: $_Static-White;
+    text-align: center;
+  }
+  .btn-wrap {
+    margin-bottom: 20px;
+    @include primary-btn;
+    border-radius: 20px;
+    transition: 0.7s ease-in-out;
+    &:hover .btn-CTA {
+      color: $_Dark;
+    }
+    .btn-CTA {
+      color: $_Static-White;
+      @include action_S;
+    }
+  }
+  .caption-wrap {
+    margin-bottom: 9px;
+    .caption {
+      text-align: center;
+      @include caption;
+      color: $_Static-White;
+    }
+  }
+  .timer-wrap {
+    background-color: $_Static-White-40;
+    border-radius: 20px;
+    .timer-body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px 8px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 8px;
+        border-right: 1px solid $_Static-White-40;
+        &:last-child {
+          border-right: none;
+        }
+        .timer-number {
+          color: $_Static-White;
+          @include header_2;
+        }
+        .timer-name {
+          color: $_Static-White;
+          @include header_4;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 769px) {
+  .CTA {
+    padding: 110px 0;
+  }
+}
+@media (max-width: 566px) {
+  .CTA-wrap {
+    width: 100%;
+  }
+}

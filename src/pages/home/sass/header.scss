@@ -1,0 +1,136 @@
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  .logo_wrap {
+    @include logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo-icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 4px;
+      .logo-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .logo-text-wrap {
+      @include logo;
+      margin-left: -4px;
+      .logo-text {
+        @include action_S;
+        text-align: center;
+        color: $_Dark;
+      }
+    }
+  }
+}
+.nav-menu {
+  width: 30%;
+}
+
+.nav-menu_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .disabled {
+    pointer-events: none;
+  }
+
+  .nav-menu_list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include menu-item;
+
+    .nav-menu_list-item_link {
+      @include action_S;
+      color: $_Dark;
+      transition: 0.7s ease-in-out;
+    }
+    &:hover .nav-menu_list-item_link {
+      color: $_Primary;
+    }
+  }
+}
+
+.burger-icon {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: $_Dark;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.burger-icon.clicked {
+  span:nth-child(1) {
+    transform: translateY(2px) rotate(45deg);
+  }
+  span:nth-child(2) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 1090px) {
+  .header-wrap {
+    .nav-menu {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 869px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+  .header-wrap {
+    position: relative;
+    .burger-icon {
+      display: flex;
+    }
+    .nav-menu {
+      transform: translateX(100%);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      left: -8px;
+      position: absolute;
+      top: 100%;
+      width: 100vw;
+      height: 95vh;
+      z-index: 20;
+      background-color: $_Static-White;
+      transition: 0.7s ease-in-out;
+    }
+
+    .nav-menu_list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      .nav-menu_list-item_link {
+        @include action_L;
+      }
+    }
+  }
+}

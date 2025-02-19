@@ -1,0 +1,128 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $_Static-White;
+  border: none;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  height: auto;
+}
+
+.modal-info {
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+.img-container {
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+  background-color: $_Content-BG;
+}
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.snowflakes {
+  display: flex;
+  margin-left: 8px;
+}
+.snowflake {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background: url("../../../assets/icons/snowflake-pink.svg") no-repeat center
+    center;
+  background-size: contain;
+}
+.snowflake.red {
+  background: url("../../../assets/icons/snowflake-red.svg") no-repeat center
+    center;
+  background-size: contain;
+}
+body.modal-open {
+  overflow: hidden;
+}
+.modal-category {
+  margin-bottom: 8px;
+  @include header_4;
+}
+.modal-category.for-work {
+  color: $_Tag-Purple;
+}
+.modal-category.for-health {
+  color: $_Tag-Green;
+}
+.modal-category.for-harmony {
+  color: $_Tag-Pink;
+}
+.modal-title {
+  @include header_3;
+  color: $_Dark;
+  margin-bottom: 8px;
+}
+.modal-description {
+  @include paragraph;
+  color: $_Dark;
+  margin-bottom: 20px;
+}
+.super-title {
+  @include header_4;
+  color: $_Dark;
+  margin-bottom: 8px;
+}
+
+.modal-superpowers {
+  display: flex;
+  flex-direction: column;
+  .superpower {
+    display: flex;
+    justify-content: space-between;
+    span {
+      display: block;
+    }
+  }
+}
+.snow-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  p {
+    @include paragraph;
+    color: $_Dark;
+  }
+}

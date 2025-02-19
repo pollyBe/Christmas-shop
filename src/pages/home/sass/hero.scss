@@ -1,0 +1,50 @@
+.hero {
+  background-color: $_Primary;
+  background-image: url(./assets/background/bg-snow.png),
+    url(./assets/background/bg-ball.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.hero-context_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  width: 426px;
+  margin: auto;
+  gap: 12px;
+  .caption-wrap {
+    .caption-text {
+      text-align: center;
+      @include caption;
+      color: $_Static-White;
+    }
+  }
+  h1 {
+    text-align: center;
+    @include header_1;
+    color: $_Static-White;
+  }
+  .btn-wrap {
+    @include primary-btn;
+    border-radius: 20px;
+    transition: 0.7s ease-in-out;
+    &:hover .hero-btn {
+      color: $_Dark;
+    }
+    .hero-btn {
+      color: $_Static-White;
+      @include action_S;
+    }
+  }
+}
+@media (max-width: 566px) {
+  .hero-context_wrap {
+    width: 100%;
+  }
+}

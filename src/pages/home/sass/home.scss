@@ -1,0 +1,48 @@
+@import "./cdn.scss";
+@import "./mixins.scss";
+@import "./var.scss";
+@import "./header.scss";
+@import "./hero.scss";
+@import "./about.scss";
+@import "./slider.scss";
+@import "./best_gifts.scss";
+@import "./CTA.scss";
+@import "./footer.scss";
+@import "./modal.scss";
+
+html {
+  font-family: "Montserrat", "Allura", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+body.menu-open {
+  overflow: hidden;
+}
+.container {
+  width: 89%;
+  margin: auto;
+}
+
+@media (max-width: 1040px) {
+  .container {
+    width: 98%;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    width: 98%;
+  }
+}

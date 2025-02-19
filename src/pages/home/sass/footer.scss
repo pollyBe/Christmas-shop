@@ -1,0 +1,126 @@
+.footer {
+  background-color: $_Static-White;
+  padding: 60px 0;
+}
+
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .upper-footer-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      background-color: $_Content-BG;
+      border-radius: 20px;
+      margin-bottom: 42px;
+      cursor: pointer;
+      &:hover .card-link a {
+        color: $_Primary;
+      }
+      &:hover .card-title {
+        color: $_Primary;
+      }
+      .card-icon {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-title {
+        margin-bottom: 12px;
+        @include action_L;
+        color: $_Dark;
+      }
+      .card-link {
+        a {
+          transition: 0.5s ease-in-out;
+          @include header_3;
+          color: $_Dark;
+        }
+      }
+    }
+  }
+  .down-footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .sotials-wrap {
+      margin-bottom: 12px;
+      .sotials-list {
+        display: flex;
+        justify-content: center;
+        .sotials-item {
+          width: 40px;
+          height: 40px;
+          margin-right: 12px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:last-child {
+            margin-right: 0;
+          }
+          a img {
+            transition: 0.7s ease-in-out;
+          }
+          &:hover a img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    .info-wrap {
+      margin-bottom: 12px;
+      p {
+        @include paragraph;
+        color: $_Dark;
+      }
+    }
+    .caption-wrap {
+      &:hover a {
+        color: $_Primary;
+      }
+      a {
+        transition: 0.5s ease-in-out;
+        @include caption;
+        color: $_Dark;
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .footer-wrap {
+    .upper-footer-wrap {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 12px;
+
+      .contact-card {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .footer {
+    padding: 70px 0;
+    .footer-wrap {
+      .upper-footer-wrap {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

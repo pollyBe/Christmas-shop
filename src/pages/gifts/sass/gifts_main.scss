@@ -1,0 +1,69 @@
+@import "./mixins.scss";
+@import "./var.scss";
+@import "./header.scss";
+@import "./gifts.scss";
+@import "./footer.scss";
+@import "./modal.scss";
+
+html {
+  font-family: "Montserrat", "Allura", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container {
+  width: 89%;
+  margin: auto;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  background: $_Static-White;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top.show {
+    display: flex;
+  }
+}
+@media (max-width: 380px) {
+  .scroll-to-top.show {
+    border: 1px solid $_Primary;
+  }
+}
+
+@media (max-width: 1040px) {
+  .container {
+    width: 98%;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    width: 98%;
+  }
+}

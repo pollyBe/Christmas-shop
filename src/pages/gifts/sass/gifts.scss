@@ -1,0 +1,209 @@
+.gifts {
+  display: flex;
+  flex-direction: column;
+  background-color: $_Primary;
+  border-radius: 20px;
+}
+
+.gifts-heading-wrap {
+  padding: 60px 0 0;
+  background-image: url(../../../assets/background/bg-garland.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .gifts-title {
+    width: 430px;
+    margin: auto;
+    text-align: center;
+    @include header_1;
+    color: $_Static-White;
+  }
+}
+
+.gifts-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 60px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 37%;
+  margin: auto;
+  margin-bottom: 20px;
+  .target {
+    pointer-events: none;
+    background-color: $_Static-White-20;
+    border-radius: 12px;
+  }
+  .tab {
+    @include action_S;
+    color: $_Static-White;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: 0.7s ease-in-out;
+    &:hover {
+      background-color: $_Static-White-20;
+      border-radius: 12px;
+    }
+  }
+}
+
+.cards-wrap {
+  .cards-list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+.cards_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: $_Content-BG;
+  width: 310px;
+  height: 342px;
+  transition: 0.7s ease-in-out;
+  &:hover .item-descr {
+    .name p {
+      color: $_Primary;
+    }
+  }
+  .item-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $_Content-BG;
+    width: 310px;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 20px;
+
+    .item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .item-descr {
+    align-self: flex-end;
+    padding: 20px 20px 0 20px;
+    width: 100%;
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+    background-color: $_Static-White;
+    .category {
+      margin-bottom: 8px;
+      p {
+        @include header_4;
+      }
+    }
+    .for-work {
+      p {
+        color: $_Tag-Purple;
+      }
+    }
+    .for-health {
+      p {
+        color: $_Tag-Green;
+      }
+    }
+    .for-harmony {
+      p {
+        color: $_Tag-Pink;
+      }
+    }
+    .name {
+      p {
+        transition: 0.5s ease-in-out;
+        @include header_3;
+        color: $_Dark;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .cards-wrap {
+    .cards-list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .tabs {
+    width: 50%;
+  }
+  .cards-wrap {
+    width: 80%;
+    margin: auto;
+    .cards-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    width: 63%;
+  }
+  .cards-wrap {
+    width: 84%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .tabs {
+    width: 80%;
+  }
+  .cards-wrap {
+    width: 45%;
+    margin: auto;
+    .cards-list {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(12, 1fr);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    width: 100%;
+  }
+  .cards-wrap {
+    width: 100%;
+    .cards-list {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(12, 1fr);
+      .cards_item {
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .gifts-heading-wrap {
+    .gifts-title {
+      width: 90%;
+    }
+  }
+  .tabs {
+    width: 95%;
+    .tab {
+      padding: 12px 8px;
+    }
+  }
+}

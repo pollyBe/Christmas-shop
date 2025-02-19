@@ -1,0 +1,66 @@
+.about {
+  background-color: $_Primary;
+  background-image: url(./assets/background/bg-snow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.about-wrap {
+  width: 100%;
+  background-color: $_Static-White;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+
+  .about-info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    max-width: 40%;
+    .caption-wrap {
+      margin-bottom: 20px;
+
+      .caption-text {
+        @include caption;
+        color: $_Primary;
+      }
+    }
+    .about-title {
+      margin-bottom: 20px;
+
+      @include header_2;
+      color: $_Dark;
+    }
+    .description-wrap {
+      width: 92%;
+      .descr-text {
+        @include paragraph;
+        color: $_Dark;
+      }
+    }
+  }
+  .about-img-wrap {
+    width: 50%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 566px) {
+  .about-wrap {
+    flex-direction: column;
+    .about-info-wrap {
+      max-width: 100%;
+      padding: 60px 28px 40px;
+    }
+    .about-img-wrap {
+      width: 100%;
+    }
+  }
+}

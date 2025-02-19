@@ -1,0 +1,155 @@
+.best-gifts {
+  background-color: $_Primary;
+  background-image: url(./assets/background/bg-snow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.best-gifts-wrap {
+  display: flex;
+  flex-direction: column;
+  .best-gifts-title-wrap {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    .caption-wrap {
+      margin-bottom: 12px;
+      .caption-text {
+        @include caption;
+        color: $_Static-White;
+      }
+    }
+    .best-gifts-title {
+      @include header_2;
+      color: $_Static-White;
+    }
+  }
+  .best-gifts-list-wrap {
+    .best-gifts-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      .best-gifts_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: $_Content-BG;
+        width: 310px;
+        height: 342px;
+        transition: 0.7s ease-in-out;
+        &:hover .item-descr {
+          .name p {
+            color: $_Primary;
+          }
+        }
+        .item-img-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $_Content-BG;
+          width: 310px;
+          height: 230px;
+          overflow: hidden;
+          border-radius: 20px;
+
+          .item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .item-descr {
+          align-self: flex-end;
+          padding: 20px 20px 0 20px;
+          width: 100%;
+          height: 112px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          border-radius: 20px;
+          background-color: $_Static-White;
+          .category {
+            margin-bottom: 8px;
+            p {
+              @include header_4;
+            }
+          }
+          .for-work {
+            p {
+              color: $_Tag-Purple;
+            }
+          }
+          .for-health {
+            p {
+              color: $_Tag-Green;
+            }
+          }
+          .for-harmony {
+            p {
+              color: $_Tag-Pink;
+            }
+          }
+          .name {
+            p {
+              transition: 0.5s ease-in-out;
+              @include header_3;
+              color: $_Dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .best-gifts_item {
+    margin-bottom: 12px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .best-gifts {
+    padding: 60 0 0;
+    .best-gifts-list-wrap {
+      width: 84%;
+      margin: auto;
+      .best-gifts-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .best-gifts {
+    padding: 60px 0 70px;
+    .best-gifts-list-wrap {
+      width: 84%;
+      margin: auto;
+      .best-gifts-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 12px;
+        .best-gifts_item {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
